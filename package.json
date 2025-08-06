@@ -1,0 +1,42 @@
+{
+  "name": "translink-3d-experience",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Advanced 3D web experience with WebGL and interactive elements",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "lint": "eslint src --ext .js,.ts,.jsx,.tsx",
+    "lint:fix": "eslint src --ext .js,.ts,.jsx,.tsx --fix",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "three": "^0.160.0",
+    "gsap": "^3.12.2",
+    "lenis": "^1.0.42",
+    "tagcloud": "^2.4.0",
+    "@unseenco/taxi": "^2.0.0",
+    "stats-gl": "^2.2.8"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0",
+    "@vitest/ui": "^1.0.0",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.18.0",
+    "@typescript-eslint/parser": "^6.18.0",
+    "terser": "^5.26.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

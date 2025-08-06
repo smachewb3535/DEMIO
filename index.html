@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced 3D web experience with interactive Fleet Telemetrics visualization">
+    <meta name="keywords" content="3D, WebGL, Fleet Management, Telemetrics, Interactive">
+    <meta name="author" content="OFF+BRAND">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://translink.example.com/">
+    <meta property="og:title" content="Translink - Advanced Fleet Management">
+    <meta property="og:description" content="Experience the future of fleet management with our interactive 3D interface">
+    <meta property="og:image" content="/assets/images/translink1-opengraph.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://translink.example.com/">
+    <meta property="twitter:title" content="Translink - Advanced Fleet Management">
+    <meta property="twitter:description" content="Experience the future of fleet management with our interactive 3D interface">
+    <meta property="twitter:image" content="/assets/images/translink1-opengraph.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/webclip.png">
+    <link rel="apple-touch-icon" href="/assets/images/webclip.png">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- Critical CSS -->
+    <link rel="stylesheet" href="/assets/css/translink1.local.css">
+    <link rel="stylesheet" href="/src/css/components/fleet-telemetrics.css">
+    <link rel="stylesheet" href="/src/css/components/error-notification.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Translink Fleet Management",
+        "description": "Advanced 3D web experience for fleet management and telemetrics",
+        "url": "https://translink.example.com",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web Browser",
+        "browserRequirements": "WebGL 2.0 support required"
+    }
+    </script>
+    
+    <title>Translink - Advanced Fleet Management Experience</title>
+    
+    <!-- Performance monitoring -->
+    <script>
+        // Mark navigation start for performance tracking
+        performance.mark('navigation-start');
+        
+        // Detect JavaScript support
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Loading indicator -->
+    <div class="loader-w" role="status" aria-label="Loading application">
+        <div class="loader">
+            <div class="loader__circle"></div>
+            <div class="loader__circle"></div>
+            <div class="loader__circle"></div>
+            <div class="loader__dot"></div>
+            <div class="loader__dot"></div>
+            <div class="loader__dot"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="main-nav" class="navigation-w" role="navigation" aria-label="Main navigation">
+        <div class="nav__container">
+            <div class="nav__logo">
+                <svg viewBox="0 0 100 100" aria-hidden="true">
+                    <circle cx="50" cy="50" r="20" fill="currentColor"/>
+                </svg>
+            </div>
+            
+            <button id="menu-toggle" class="nav__burger" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+                <svg viewBox="0 0 100 100" aria-hidden="true">
+                    <circle cx="50" cy="30" r="5" fill="currentColor"/>
+                    <circle cx="50" cy="50" r="5" fill="currentColor"/>
+                    <circle cx="50" cy="70" r="5" fill="currentColor"/>
+                </svg>
+            </button>
+            
+            <ul id="nav-menu" class="nav__list" role="menubar">
+                <li class="nav__item" role="none">
+                    <a href="/" class="nav__link" role="menuitem" data-anchor="0">Home</a>
+                </li>
+                <li class="nav__item" role="none">
+                    <a href="/specs" class="nav__link" role="menuitem" data-anchor="1">Specifications</a>
+                </li>
+                <li class="nav__item" role="none">
+                    <a href="/preorder" class="nav__link" role="menuitem" data-anchor="2">Preorder</a>
+                </li>
+                <li class="nav__item" role="none">
+                    <a href="/settings" class="nav__link" role="menuitem">Theme Settings</a>
+                </li>
+            </ul>
+            
+            <div class="nav__cta">
+                <button class="sound-w" data-module="AudioToggler" aria-label="Toggle audio">
+                    <svg viewBox="0 0 25 16" aria-hidden="true">
+                        <path d="M0,8 L25,8" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <div class="nav__line" aria-hidden="true"></div>
+    </nav>
+
+    <!-- Main content -->
+    <main id="main-content" class="main-wrapper" role="main">
+        <!-- WebGL Canvas -->
+        <div class="canvas-w">
+            <canvas data-gl-canvas aria-label="3D visualization canvas"></canvas>
+        </div>
+        
+        <!-- Page content will be loaded here -->
+        <div class="content-wrapper">
+            <!-- Dynamic content -->
+        </div>
+        
+        <!-- AI Interface -->
+        <div data-ai="w" class="ai-interface" role="complementary" aria-label="AI Assistant">
+            <div data-ai="buttonWrapper" class="ai-button-wrapper">
+                <button data-ai="button" class="ai-button" aria-expanded="false" aria-controls="ai-question">
+                    <div data-ai="buttonInner" class="ai-button-inner">
+                        <span data-ai="buttonLabel" class="ai-button-label">Ask Translink</span>
+                        <div data-ai="icon" class="ai-button-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 13l3 3 7-7"/>
+                            </svg>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            
+            <div data-ai="questionWrapper" class="ai-question-wrapper">
+                <textarea 
+                    data-ai="question" 
+                    id="ai-question"
+                    class="ai-question-input" 
+                    placeholder="Ask me anything about fleet management..."
+                    aria-label="Ask a question about fleet management"
+                    rows="3"
+                ></textarea>
+                <button data-ai="closeQuestion" class="ai-close-button" aria-label="Close question input">×</button>
+            </div>
+            
+            <div data-ai="responseWrapper" class="ai-response-wrapper" role="region" aria-label="AI Response">
+                <div class="ai-response-visual">
+                    <img data-ai="visual" class="ai-response-image" alt="Response visualization" loading="lazy">
+                </div>
+                <div class="ai-response-content">
+                    <h3 data-ai="title" class="ai-response-title"></h3>
+                    <p data-ai="response" class="ai-response-text"></p>
+                </div>
+                
+                <!-- Call-to-action buttons -->
+                <div class="ai-cta-buttons">
+                    <a data-ai="CTA_1" href="/specs" class="ai-cta-button" style="display: none;">
+                        <span>View Specs</span>
+                        <svg aria-hidden="true" viewBox="0 0 9 9">
+                            <path d="M4.91455 7.82678L8.2332 4.50853M8.2332 4.50853L4.82233 1.09766M8.2332 4.50853L1.16016 4.50853" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a data-ai="CTA_2" href="#contact" class="ai-cta-button" style="display: none;">
+                        <span>Contact Us</span>
+                        <svg aria-hidden="true" viewBox="0 0 9 9">
+                            <path d="M4.91455 7.82678L8.2332 4.50853M8.2332 4.50853L4.82233 1.09766M8.2332 4.50853L1.16016 4.50853" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a data-ai="CTA_3" href="/preorder" class="ai-cta-button" style="display: none;">
+                        <span>Preorder</span>
+                        <svg aria-hidden="true" viewBox="0 0 9 9">
+                            <path d="M4.91455 7.82678L8.2332 4.50853M8.2332 4.50853L4.82233 1.09766M8.2332 4.50853L1.16016 4.50853" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <button data-ai="CTA_4" class="ai-cta-button" style="display: none;">
+                        <span>Learn More</span>
+                        <svg aria-hidden="true" viewBox="0 0 9 9">
+                            <path d="M4.91455 7.82678L8.2332 4.50853M8.2332 4.50853L4.82233 1.09766M8.2332 4.50853L1.16016 4.50853" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal for detailed responses -->
+    <div data-ai="modal" class="modal-w" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal__backdrop"></div>
+        <div class="modal__content">
+            <div class="modal__header">
+                <h2 id="modal-title" data-ai="modalTitle" class="modal__title">Detailed Information</h2>
+                <button data-ai="closeModal" class="modal__close-w" aria-label="Close modal">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            
+            <div class="modal__body">
+                <div data-ai="modalVisualWrapper" class="modal__visual-wrapper">
+                    <img data-ai="modalVisual" class="modal__visual" alt="Detailed visualization" loading="lazy">
+                    <video data-ai="video" class="modal__video" muted loop playsinline style="display: none;">
+                        <source data-ai="videoSource" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                
+                <div class="modal__translink-w">
+                    <!-- AI interface will be moved here when modal opens -->
+                </div>
+                
+                <div data-ai="accordionWrapper" class="accordion-wrapper" role="region" aria-label="Previous conversations">
+                    <!-- Accordion items will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tag cloud for visual interest -->
+    <div class="tagcloud-w" aria-hidden="true"></div>
+    
+    <!-- Progress indicator -->
+    <div class="indicator-w" role="status" aria-label="Loading progress">
+        <div class="indicator__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z" fill="currentColor"/>
+            </svg>
+        </div>
+        <div class="indicator__label">[ 000 ]</div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll__down" role="button" tabindex="0" aria-label="Scroll down for more content">
+        <div class="scroll__down-icon" aria-hidden="true">↓</div>
+    </div>
+
+    <!-- Cursor for desktop -->
+    <div class="cursor" aria-hidden="true">
+        <div class="cursor__label"></div>
+    </div>
+
+    <!-- Application scripts -->
+    <script type="module" src="/src/js/app.js"></script>
+    
+    <!-- Performance monitoring -->
+    <script>
+        // Mark when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            performance.mark('dom-ready');
+        });
+        
+        // Mark when everything is loaded
+        window.addEventListener('load', () => {
+            performance.mark('load-complete');
+            
+            // Measure total load time
+            performance.measure('total-load-time', 'navigation-start', 'load-complete');
+            
+            // Log performance metrics
+            const loadTime = performance.getEntriesByName('total-load-time')[0];
+            if (loadTime) {
+                console.log(`Total load time: ${loadTime.duration.toFixed(2)}ms`);
+            }
+        });
+    </script>
+    
+    <!-- Service Worker for caching (optional) -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

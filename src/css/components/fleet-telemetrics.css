@@ -1,0 +1,234 @@
+/**
+ * Fleet Telemetrics Particle Styles
+ * Styles for the floating text elements that replace the particle bubbles
+ */
+
+.fleet-telemetrics-particle {
+    position: absolute;
+    pointer-events: none;
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--fleet-particle-primary, #60b2ff);
+    text-shadow: 0 0 8px var(--fleet-particle-primary, #60b2ff)99;
+    white-space: nowrap;
+    z-index: 1000;
+    opacity: 0;
+    transform-origin: center;
+    transition: all 0.3s ease;
+    background: var(--fleet-particle-bg, rgba(19, 49, 83, 0.85));
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--fleet-particle-border, rgba(96, 178, 255, 0.3));
+    backdrop-filter: blur(6px);
+    min-width: 120px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.fleet-telemetrics-particle::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(45deg, 
+        rgba(96, 178, 255, 0.1) 0%, 
+        rgba(96, 178, 255, 0.05) 50%, 
+        rgba(96, 178, 255, 0.1) 100%);
+    border-radius: 6px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.fleet-telemetrics-particle:hover::before {
+    opacity: 1;
+}
+
+/* Status-based color variations */
+.fleet-telemetrics-particle.status-normal {
+    color: var(--fleet-particle-primary, #60b2ff);
+    text-shadow: 0 0 8px var(--fleet-particle-primary, #60b2ff)99;
+    border-color: var(--fleet-particle-border, rgba(96, 178, 255, 0.3));
+}
+
+.fleet-telemetrics-particle.status-warning {
+    color: var(--fleet-particle-warning, #ffb366);
+    text-shadow: 0 0 8px var(--fleet-particle-warning, #ffb366)99;
+    border-color: var(--fleet-particle-warning, #ffb366)4d;
+    background: var(--fleet-particle-warning, #ffb366)1a;
+}
+
+.fleet-telemetrics-particle.status-critical {
+    color: var(--fleet-particle-critical, #ff6b6b);
+    text-shadow: 0 0 8px var(--fleet-particle-critical, #ff6b6b)99;
+    border-color: var(--fleet-particle-critical, #ff6b6b)4d;
+    background: var(--fleet-particle-critical, #ff6b6b)1a;
+    animation: pulse-critical 2s infinite;
+}
+
+.fleet-telemetrics-particle.status-high {
+    color: var(--fleet-particle-success, #66ff66);
+    text-shadow: 0 0 8px var(--fleet-particle-success, #66ff66)99;
+    border-color: var(--fleet-particle-success, #66ff66)4d;
+    background: var(--fleet-particle-success, #66ff66)1a;
+}
+
+/* Priority-based scaling */
+.fleet-telemetrics-particle.priority-critical {
+    transform: scale(1.3);
+    font-weight: 700;
+}
+
+.fleet-telemetrics-particle.priority-high {
+    transform: scale(1.15);
+    font-weight: 700;
+}
+
+.fleet-telemetrics-particle.priority-normal {
+    transform: scale(1.0);
+}
+
+/* Metric type specific styles */
+.fleet-telemetrics-particle.type-location {
+    border-left: 3px solid #60b2ff;
+}
+
+.fleet-telemetrics-particle.type-fuel {
+    border-left: 3px solid #ffb366;
+}
+
+.fleet-telemetrics-particle.type-engine {
+    border-left: 3px solid #ff6b6b;
+}
+
+.fleet-telemetrics-particle.type-driver {
+    border-left: 3px solid #66ff66;
+}
+
+.fleet-telemetrics-particle.type-fleet {
+    border-left: 3px solid #b366ff;
+    font-weight: 700;
+    background: rgba(35, 19, 51, 0.9);
+}
+
+/* Animation keyframes */
+@keyframes pulse-critical {
+    0%, 100% {
+        opacity: 0.9;
+        transform: scale(1.0);
+    }
+    50% {
+        opacity: 1.0;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes float-in {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.8);
+    }
+    100% {
+        opacity: 0.9;
+        transform: translateY(0) scale(1.0);
+    }
+}
+
+@keyframes float-out {
+    0% {
+        opacity: 0.9;
+        transform: translateY(0) scale(1.0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.8);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .fleet-telemetrics-particle {
+        font-size: 10px;
+        padding: 4px 6px;
+        min-width: 100px;
+    }
+    
+    .fleet-telemetrics-particle.priority-critical {
+        transform: scale(1.2);
+    }
+    
+    .fleet-telemetrics-particle.priority-high {
+        transform: scale(1.1);
+    }
+}
+
+@media (max-width: 480px) {
+    .fleet-telemetrics-particle {
+        font-size: 9px;
+        padding: 3px 5px;
+        min-width: 80px;
+    }
+    
+    .fleet-telemetrics-particle.priority-critical {
+        transform: scale(1.15);
+    }
+    
+    .fleet-telemetrics-particle.priority-high {
+        transform: scale(1.05);
+    }
+}
+
+/* Theme integration */
+:root {
+    --fleet-particle-primary: #60b2ff;
+    --fleet-particle-warning: #ffb366;
+    --fleet-particle-critical: #ff6b6b;
+    --fleet-particle-success: #66ff66;
+    --fleet-particle-bg: rgba(19, 49, 83, 0.85);
+    --fleet-particle-border: rgba(96, 178, 255, 0.3);
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .fleet-telemetrics-particle {
+    background: rgba(10, 10, 20, 0.9);
+    border-color: rgba(96, 178, 255, 0.4);
+}
+
+/* Light theme adjustments */
+[data-theme="light"] .fleet-telemetrics-particle {
+    background: rgba(240, 245, 255, 0.9);
+    color: #1a365d;
+    text-shadow: 0 0 4px rgba(26, 54, 93, 0.3);
+    border-color: rgba(26, 54, 93, 0.3);
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .fleet-telemetrics-particle {
+        background: rgba(0, 0, 0, 0.95);
+        border-width: 2px;
+        font-weight: 700;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .fleet-telemetrics-particle {
+        transition: none;
+        animation: none;
+    }
+    
+    .fleet-telemetrics-particle.status-critical {
+        animation: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    .fleet-telemetrics-particle {
+        display: none;
+    }
+}
