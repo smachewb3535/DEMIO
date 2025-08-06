@@ -17,7 +17,7 @@
     "three": "^0.160.0",
     "gsap": "^3.12.2",
     "lenis": "^1.0.42",
-    "tagcloud": "^2.4.0",
+    "tagcloud": "^1.1.0",
     "@unseenco/taxi": "^1.9.0",
     "stats-gl": "^2.2.8"
   },
